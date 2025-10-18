@@ -41,7 +41,7 @@ module.exports = class NodeUdp {
 			this.isBound = false;
 
 			if (this.rebindOnError) {
-				setTimeout(bindSocket(this.port), this.rebindDelay);
+        setTimeout(() => this.bindSocket(this.port), this.rebindDelay);
 			} else {
 				console.log(`UDP socket closed. rebindOnError disabled.`);
 			}
